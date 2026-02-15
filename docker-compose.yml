@@ -1,0 +1,10 @@
+services:
+  opendata_aggregator-master:
+    image: opendata_aggregator:master
+    restart: always
+    ports:
+      - 9696:8080
+    volumes:
+      - ./config.toml:/opt/config.toml:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
